@@ -1,3 +1,4 @@
+/* this is the example of enviroment variable
 pipeline {
 
     agent any
@@ -20,4 +21,27 @@ pipeline {
 
     }
 
+} */
+
+
+pipeline {
+
+    agent any
+
+    paramenters {
+        string(
+            name: 'ENV' ,
+            defaultValue: 'dev'
+            description: 'Enviroment'
+        )
+    }
+
+    stages {
+
+        stage('Show enviroment'){
+            steps {
+                echo "Deploying to ${params.ENV}"
+            }
+        }
+    }
 }
