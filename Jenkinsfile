@@ -28,20 +28,28 @@ pipeline {
 
     agent any
 
-    paramenters {
+    parameters {
+
         string(
-            name: 'ENV' ,
+            name: 'ENV',
             defaultValue: 'dev',
-            description: 'Enviroment'
+            description: 'Environment'
         )
+
     }
 
     stages {
 
-        stage('Show enviroment'){
+        stage('Show Environment') {
+
             steps {
+
                 echo "Deploying to ${params.ENV}"
+
             }
+
         }
+
     }
+
 }
