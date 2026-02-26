@@ -31,7 +31,7 @@ pipeline {
     paramenters {
         string(
             name: 'ENV' ,
-            defaultValue: 'dev'
+            defaultValue: 'dev',
             description: 'Enviroment'
         )
     }
